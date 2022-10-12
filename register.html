@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td{
+            background-color: plum;
+            padding: 5px;
+            
+        }
+        .pinkcolor{
+            background-color: pink;
+            border: 0.5px solid;
+            border-radius: 2px;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <table >
+        <form>
+            <tr>
+                <td colspan="3" align="center"><b>REGISTER FORM</b></td>
+            </tr>
+            <tr>
+                <td rowspan="2">Name</td>
+                <td><input id="txtName" type="text" onkeyup="checkName()"></td>
+                
+            </tr>
+            <tr>
+                <td><input id="txtWelcome" class="pinkcolor" readonly value="Welcome" ></td>
+            </tr>
+            <tr>
+                <td>Job</td>
+                <td><select id="sltJob" onchange="checkJob()">
+                    <option value="0">[........]</option>
+                    <option value="1" id="Manager">Manager</option>
+                    <option value="2" id="Accountant">Accountant</option>
+                    <option value="3" id="Saleman">Saleman</option>
+                </select>
+            </td>
+            </tr>
+            <tr>
+                <td>Salary</td>
+                <td><input id="txtSalary" class="pinkcolor" readonly></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>Mobile</td>
+                <td><input type="tel"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+            <script>
+                function checkName(){
+            var name = document.getElementById("txtName").value;
+            
+            document.getElementById("txtWelcome").value = "Welcome "+name;		
+            }       
+
+                function checkJob(){
+                    var val = document.getElementById("sltJob").value;
+                    if( val == "0"){
+                        alert("Job must be selected")
+                        document.getElementById("txtSalary").value;
+                    }
+                    if( val == "1"){
+                        document.getElementById("txtSalary").value = 2000;
+                    }
+                    if( val == "2"){
+                        document.getElementById("txtSalary").value = 1000;
+                    }
+                    if( val == "3"){
+                        document.getElementById("txtSalary").value = 500;
+                    }
+
+                }
+
+
+
+                function checkSubmit(){
+                    
+                }
+            </script>
+        </form>
+        
+    </table>
+</body>
+</html>
